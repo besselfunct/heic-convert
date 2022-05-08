@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 # Import the necessary libraries
+from tqdm import tqdm
 import os
 import pyheif
 import piexif
@@ -12,7 +13,7 @@ from PIL import Image
 # This is our main function that does the actual conversion
 def main(files):
     # This iterates over all of the file names we give it
-    for f in files:
+    for f in tqdm(files):
         # Read in the image
         heif_file = pyheif.read(f)
         # Create the image from the heic file
